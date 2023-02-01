@@ -1,0 +1,16 @@
+{
+  "Home": "Ana Sayfa",
+  "NowPlaying": "Şu Anda Yayında",
+  "PopularMovies": "Popüler Filmler",
+  "TopRatedMovies": "En Çok Oy Alan",
+  "Genre": "Tür",
+  "Vote": "Oy",
+  "VoteAverage": "Oy Ortalaması",
+  "VoteCount": "Oy Sayısı",
+  "MovieActors": "Film Oyuncuları",
+  "Placeholder":"Film Ara",
+  "ShowMore":"Daha Fazla Göster",
+  "ShowProfile":"Profili Göster",
+  "Biography" : "Biyografi",
+  "BiographyMessage":"Biyografi Bulunamadı"
+}

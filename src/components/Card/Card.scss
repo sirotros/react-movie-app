@@ -1,0 +1,31 @@
+.card {
+  width: 400px;
+  height: 550px;
+  margin: 20px 10px;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  &.sm{
+    height: 450px;
+    text-align: center;
+    .imgContainer{
+      height: 80%;
+    }
+  }
+  .imgContainer {
+    width: 350px;
+    height: 60%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .content {
+    margin-top: 10px;
+  }
+  .card-btn{
+    bottom: 5px;
+    position: absolute;
+    width: 90%;
+  }
+}

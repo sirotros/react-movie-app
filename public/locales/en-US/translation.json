@@ -1,0 +1,16 @@
+{
+  "Home": "Home",
+  "NowPlaying": "Now Playing",
+  "PopularMovies": "Popular Movies",
+  "TopRatedMovies": "Top Rated Movie",
+  "Genre": "Genres",
+  "Vote": "Vote",
+  "VoteAverage": "Vote Average",
+  "VoteCount": "Vote Count",
+  "MovieActors": "Movie Actors",
+  "Placeholder": "Search Movie",
+  "ShowMore": "Show More",
+  "ShowProfile": "Show Profile",
+  "Biography": "Biography",
+  "BiographyMessage": "Biography Not Found"
+}
