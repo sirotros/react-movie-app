@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ReactPaginate from "react-paginate";
 import Spinner from "components/Spinner/Spinner";
+import { changeTitle } from "utils";
+
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -17,11 +19,13 @@ export default function Home() {
       setNowPlayings(response.data);
       setIsLoading(false)
     });
+    changeTitle(t("NowPlaying"))
   }, [pages, i18n.language]);
 
   const handleChange = (e) => {
     setPages(e.selected + 1)
   }
+
   return (
     <section>
       <h3 className="text-center mt-4">{t("NowPlaying")}</h3>

@@ -5,13 +5,13 @@ function Input({ type, label, className, placeholder, onChange }) {
     return (
         <>
             {
-                label ? 
-                <div className={`input-group mb-3 ${className}`}>
-                    <span className="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" className="form-control" placeholder={placeholder} />
-                </div>
-                : 
-                < input className={`form-control ${className}`} type={type} placeholder={placeholder} onChange={onChange} />}
+                label ?
+                    <div className={`input-group mb-3 ${className}`}>
+                        <span className="input-group-text" id="basic-addon1">@</span>
+                        <input type="text" className="form-control" placeholder={placeholder} />
+                    </div>
+                    :
+                    < input className={`form-control ${className}`} type={type} placeholder={placeholder} onChange={onChange} />}
         </>
     );
 };

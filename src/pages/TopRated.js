@@ -3,11 +3,12 @@ import Card from "components/Card/Card";
 import { useTranslation } from "react-i18next";
 import requestManager from "api";
 import Spinner from "components/Spinner/Spinner";
+import { changeTitle } from "utils";
 
 export default function TopRated() {
     const [isLoading, setIsLoading] = useState(true)
 
-    const { i18n } = useTranslation()
+    const { t, i18n } = useTranslation()
     const request = requestManager()
     const [topRated, setTopRated] = useState()
     useEffect(() => {
@@ -15,15 +16,19 @@ export default function TopRated() {
             setTopRated(response.data.results)
             setIsLoading(false)
         })
+        changeTitle(t("TopRatedMovies"))
     }, [i18n.language])
     return (
-        <section className="d-flex flex-wrap">
-            {!isLoading ?
-                topRated && topRated.map((topRate) => {
-                    return <Card id={topRate.id} title={topRate?.title} overview={topRate?.overview} imgUrl={topRate?.poster_path} key={topRate.id} />
-                })
-                : <Spinner />
-            }
+        <section >
+            <h2 className="text-center"> {t("TopRatedMovies")} </h2>
+            <div className="d-flex flex-wrap ">
+                {!isLoading ?
+                    topRated && topRated.map((topRate) => {
+                        return <Card id={topRate.id} title={topRate?.title} overview={topRate?.overview} imgUrl={topRate?.poster_path} key={topRate.id} />
+                    })
+                    : <Spinner />
+                }
+            </div>
         </section>
     );
 };

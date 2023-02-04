@@ -8,10 +8,11 @@
   "VoteAverage": "Oy Ortalaması",
   "VoteCount": "Oy Sayısı",
   "MovieActors": "Film Oyuncuları",
-  "Placeholder":"Film Ara",
-  "ShowMore":"Daha Fazla Göster",
-  "ShowProfile":"Profili Göster",
-  "Biography" : "Biyografi",
-  "BiographyErrorMessage":"Türkçe biyografi Bulunamadı",
-  "MovieNotFound": "adlı film bulunamadı"
+  "Placeholder": "Film Ara",
+  "ShowMore": "Daha Fazla Göster",
+  "ShowProfile": "Profili Göster",
+  "Biography": "Biyografi",
+  "BiographyErrorMessage": "Türkçe biyografi Bulunamadı",
+  "MovieNotFound": "adlı film bulunamadı",
+  "ErrorMessage": "Sayfa Bulunamadı"
 }

@@ -6,6 +6,7 @@ import { movieImgURL } from "utils/config";
 import Card from "components/Card/Card";
 import { useTranslation } from "react-i18next";
 import Spinner from "components/Spinner/Spinner";
+import { changeTitle } from "utils";
 
 export default function Detail() {
   const [isLoading, setIsLoading] = useState(true)
@@ -23,6 +24,9 @@ export default function Detail() {
     });
     request.movieTeam(id).then((response) => setTeam(response.data.cast));
   }, [id, i18n.language]);
+  useEffect(() => {
+    changeTitle(detail?.title)
+  }, [detail])
   return (
     <section className="mt-5">
       {!isLoading ?

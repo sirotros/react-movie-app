@@ -1,19 +1,18 @@
 import "./Header.scss";
 
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaLanguage, FaSearch, FaCheck } from "react-icons/fa";
+import { FaLanguage, FaCheck } from "react-icons/fa";
 import ReactCountryFlag from "react-country-flag"
 
 import requestManager from "api";
 import { useTranslation } from "react-i18next";
+import Input from "components/Input/Input";
 
 export default function Header() {
   const request = requestManager();
   const [searchText, setSearchText] = useState("");
   const [movieNames, setMovieNames] = useState([]);
-  console.log(searchText, movieNames)
 
   const { t, i18n } = useTranslation();
 
@@ -46,7 +45,7 @@ export default function Header() {
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <FaLanguage className="fs-4"/>
+                  <FaLanguage className="fs-4" />
                 </a>
                 <ul class="dropdown-menu">
                   <li className={`px-3 lang`} onClick={() => i18n.changeLanguage("tr-TR")}> {i18n.language == "tr-TR" ? <FaCheck /> : <ReactCountryFlag countryCode="tr" svg />} Tr</li>
@@ -54,8 +53,8 @@ export default function Header() {
                 </ul>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder={t("Placeholder")} aria-label="Search" onChange={(e) => setSearchText(e.target.value)} />
+            <form class="d-flex" >
+              <Input class="form-control me-2" placeholder={t("Placeholder")} onChange={(e) => setSearchText(e.target.value)} />
             </form>
           </div>
         </div>
@@ -82,61 +81,3 @@ export default function Header() {
   );
 }
 
-/*
- <header className="navbar d-flex align-items-center justify-content-around">
-        <Link to="/" className="text-decoration-none ">
-          {t("Home")}
-        </Link>
-        <Link to="/popular" className="text-decoration-none ">
-          {t("PopularMovies")}
-        </Link>
-        <Link to="/top_rated" className="text-decoration-none ">
-          {t("TopRatedMovies")}
-        </Link>
-        <Button
-          variant="link"
-          className="text-dark"
-          onClick={() => setShowSearch(!showSearch)}
-        >
-          <FaSearch />
-        </Button>
-        <div className="dropdown ">
-          <button
-            className="btn btn-link text-dark dropdown-toggle "
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <FaLanguage />
-          </button>
-          <ul className="dropdown-menu">
-            <li className={`px-3 lang`} onClick={() => i18n.changeLanguage("tr-TR")}>Tr {i18n.language == "tr-TR" && "bg-success"}</li>
-            <li className={`px-3 lang`} onClick={() => i18n.changeLanguage("en-US")}>En {i18n.language == "en-US" && "bg-success"}</li>
-          </ul>
-        </div>
-      </header>
-      {showSearch && (
-        <Input
-          placeholder={t("Placeholder")}
-          onChange={(e) => setSearchText(e.target.value)}
-        />
-      )}
-      {movieNames.length > 0 ? (
-        <ul className="list-group">
-          {movieNames.map((moviName, index) => {
-            return (
-              <li key={index} className="list-group-item">
-                <Link
-                  to={`/detail/${moviName.id}`}
-                  onClick={() => {
-                    setShowSearch(false)
-                    setMovieNames("")
-                  }}
-                >
-                  {moviName.name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
-*/

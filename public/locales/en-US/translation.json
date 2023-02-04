@@ -13,5 +13,6 @@
   "ShowProfile": "Show Profile",
   "Biography": "Biography",
   "BiographyErrorMessage": "English biography Not Found",
-  "MovieNotFound": "movie not found"
+  "MovieNotFound": "movie not found",
+  "ErrorMessage": "Page Not Found"
 }

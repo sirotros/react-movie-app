@@ -5,6 +5,7 @@ import requestManager from "api";
 import { movieImgURL } from "utils/config";
 import { useTranslation } from "react-i18next";
 import Spinner from "components/Spinner/Spinner";
+import { changeTitle } from "utils";
 
 export default function ProfileDetail() {
   const [isLoading, setIsLoading] = useState(true)
@@ -23,7 +24,13 @@ export default function ProfileDetail() {
     request
       .getProfileImage(id)
       .then((response) => setProfilePhoto(response.data.profiles[0]));
+
   }, [i18n.language]);
+
+  useEffect(() => {
+    changeTitle(profile?.name)
+  }, [profile])
+  
   return (
     <div>
       {!isLoading ? (
@@ -40,7 +47,7 @@ export default function ProfileDetail() {
               <h4> {t("Biography")} </h4>
               <p>
                 {profile.biography ? (
-                  <>{profile.biography} </>
+                  <>{profile?.biography} </>
                 ) : (
                   <p>{t("BiographyErrorMessage")} </p>
                 )}
@@ -48,7 +55,7 @@ export default function ProfileDetail() {
             </div>
           </div>
         </>
-      ) : <Spinner/>}
+      ) : <Spinner />}
     </div>
   );
 }
