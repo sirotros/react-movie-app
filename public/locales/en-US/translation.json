@@ -12,5 +12,6 @@
   "ShowMore": "Show More",
   "ShowProfile": "Show Profile",
   "Biography": "Biography",
-  "BiographyMessage": "Biography Not Found"
+  "BiographyErrorMessage": "English biography Not Found",
+  "MovieNotFound": "movie not found"
 }

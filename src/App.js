@@ -11,6 +11,7 @@ import TopRated from "pages/TopRated";
 import ErrorPage from "pages/ErrorPage";
 import ProfileDetail from "pages/ProfileDetail";
 
+
 function Layout() {
   return (
     <>
@@ -26,7 +27,7 @@ function App() {
   }, [])
 
   return (
-    <main className="container">
+    <main className="container z-n1">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

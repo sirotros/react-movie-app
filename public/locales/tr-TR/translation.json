@@ -12,5 +12,6 @@
   "ShowMore":"Daha Fazla Göster",
   "ShowProfile":"Profili Göster",
   "Biography" : "Biyografi",
-  "BiographyMessage":"Biyografi Bulunamadı"
+  "BiographyErrorMessage":"Türkçe biyografi Bulunamadı",
+  "MovieNotFound": "adlı film bulunamadı"
 }

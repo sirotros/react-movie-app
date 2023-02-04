@@ -1,14 +1,14 @@
 .card {
-  width: 400px;
+  max-width: 400px;
   height: 550px;
   margin: 20px 10px;
   padding: 20px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
-  &.sm{
+  &.sm {
     height: 450px;
     text-align: center;
-    .imgContainer{
+    .imgContainer {
       height: 80%;
     }
   }
@@ -23,9 +23,18 @@
   .content {
     margin-top: 10px;
   }
-  .card-btn{
-    bottom: 5px;
+  .card-btn {
+    bottom: 15px;
     position: absolute;
     width: 90%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .card {
+    max-width: 320px;
+    height: 550px;
+    .imgContainer {
+      width: 280px;
+    }
   }
 }

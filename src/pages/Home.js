@@ -1,29 +1,32 @@
 import "scss/page/Home.scss"
-import RequestManager from "api";
+import requestManager from "api";
 import Card from "components/Card/Card";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ReactPaginate from "react-paginate";
+import Spinner from "components/Spinner/Spinner";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true)
   const [nowPlayings, setNowPlayings] = useState();
   const { t, i18n } = useTranslation();
-  const request = RequestManager();
+  const request = requestManager();
   const [pages, setPages] = useState(1);
   useEffect(() => {
-    request.nowPlaying(pages).then((response) => setNowPlayings(response.data));
+    request.nowPlaying(pages).then((response) => {
+      setNowPlayings(response.data);
+      setIsLoading(false)
+    });
   }, [pages, i18n.language]);
 
   const handleChange = (e) => {
     setPages(e.selected + 1)
   }
-
-
   return (
     <section>
       <h3 className="text-center mt-4">{t("NowPlaying")}</h3>
-      <div className="d-flex flex-wrap">
-        {nowPlayings ? (
+      <div className="d-flex flex-wrap ">
+        {!isLoading ? (
           <>
             {nowPlayings.results.map((nowPlaying) => {
               return (
@@ -37,25 +40,23 @@ export default function Home() {
               );
             })}
           </>
-        ) : (
-          <>Loading ...</>
-        )}
+        ) : <Spinner />}
       </div>
       {
         nowPlayings && (
-          <div className="paginationBar">
+          <div className="paginationBar ">
             <ReactPaginate
               className="pagination"
-              pageClassName="page-item page-link"
-              activeClassName=" active "
+              pageClassName="page-item page-link "
+              activeClassName="active"
               breakLabel="..."
               breakClassName="page-item page-link"
-              previousLabel="< previous"
+              previousLabel="<"
               previousClassName="page-item page-link"
-              nextLabel="next >"
+              nextLabel=">"
               nextClassName="page-item page-link"
               onPageChange={handleChange}
-              pageRangeDisplayed={5}
+              pageRangeDisplayed={2}
               pageCount={nowPlayings.total_pages}
             />
           </div>

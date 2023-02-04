@@ -5,7 +5,7 @@ export const api = axios.create({
     baseURL: tmdbApiBaseUrl,
 })
 
-const RequestManager = () => {
+const requestManager = () => {
     const language = localStorage.getItem('i18nextLng');
     const popularMovies = async () => {
         try {
@@ -94,4 +94,4 @@ const RequestManager = () => {
     }
     return { popularMovies, nowPlaying, topRatedMovies, detailMovies, profileDetail, movieTeam, search, getProfileImage }
 }
-export default RequestManager;  
+export default requestManager;  

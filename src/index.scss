@@ -1,13 +1,10 @@
-@import "./scss/main.scss";
+@import "scss/main.scss";
 
-body {
-  // background-color: gray;
-  // color: #000;
+ol,
+ul {
+  list-style-type: none;
 }
-ol,ul{
-  list-style-type:none;
-}
-a{
+a {
   text-decoration: none;
   color: #000;
 }

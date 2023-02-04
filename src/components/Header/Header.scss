@@ -1,3 +1,7 @@
-.lang{
-    cursor: pointer;
+.lang {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f2f2f2;
+  }
 }
