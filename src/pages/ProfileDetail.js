@@ -20,17 +20,18 @@ export default function ProfileDetail() {
     request.profileDetail(id).then((response) => {
       setProfle(response.data);
       setIsLoading(false)
-    });
+    })
     request
       .getProfileImage(id)
       .then((response) => setProfilePhoto(response.data.profiles[0]));
 
   }, [i18n.language]);
 
+
   useEffect(() => {
     changeTitle(profile?.name)
   }, [profile])
-  
+
   return (
     <div>
       {!isLoading ? (

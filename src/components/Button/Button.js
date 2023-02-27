@@ -11,7 +11,7 @@ function Button({ variant, size, type, disabled, outline, className, children, o
 
         return classes;
     }
-
+    
     return (
         <button className={renderClasses()} disabled={disabled} type={type} onClick={onClick}> {children} </button>
     );

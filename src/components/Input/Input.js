@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Input({ type, label, className, placeholder, onChange }) {
+function Input({ type, disabled, label, className, placeholder, onChange }) {
 
     return (
         <>
@@ -8,10 +8,11 @@ function Input({ type, label, className, placeholder, onChange }) {
                 label ?
                     <div className={`input-group mb-3 ${className}`}>
                         <span className="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" className="form-control" placeholder={placeholder} />
+                        <input type="text" className="form-control" placeholder={placeholder} disabled={disabled} />
                     </div>
                     :
-                    < input className={`form-control ${className}`} type={type} placeholder={placeholder} onChange={onChange} />}
+                    < input className={`form-control ${className}`} disabled={disabled} type={type} placeholder={placeholder} onChange={onChange} />
+            }
         </>
     );
 };

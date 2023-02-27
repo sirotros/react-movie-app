@@ -1,15 +1,20 @@
+
 import axios from "axios";
-import { tmdbApiKey, tmdbApiBaseUrl } from "../utils/config";
+import { tmdbApiBaseUrl } from "../utils/config";
+const key = JSON.parse(localStorage.getItem("api_key"))
 
 export const api = axios.create({
     baseURL: tmdbApiBaseUrl,
+    params: {
+        api_key: key,
+    }
 })
 
 const requestManager = () => {
     const language = localStorage.getItem('i18nextLng');
     const popularMovies = async () => {
         try {
-            const response = await api.get("movie/popular?api_key=" + tmdbApiKey + "&language=" + language)
+            const response = await api.get("movie/popular", { params: { language } })
             return {
                 data: response.data
             }
@@ -20,7 +25,7 @@ const requestManager = () => {
 
     const nowPlaying = async (page) => {
         try {
-            const response = await api.get("movie/now_playing?api_key=" + tmdbApiKey + "&language=" + language + "&page=" + page)
+            const response = await api.get("movie/now_playing", { params: { language, page: page } })
             return {
                 data: response.data
             }
@@ -31,7 +36,7 @@ const requestManager = () => {
 
     const topRatedMovies = async () => {
         try {
-            const response = await api.get("movie/top_rated?api_key=" + tmdbApiKey + "&language=" + language)
+            const response = await api.get("movie/top_rated", { params: { language } })
             return {
                 data: response.data
             }
@@ -42,7 +47,7 @@ const requestManager = () => {
 
     const detailMovies = async (id) => {
         try {
-            const response = await api.get("movie/" + id + "?api_key=" + tmdbApiKey + "&language=" + language)
+            const response = await api.get("movie/" + id, { params: { language } })
             return {
                 data: response.data
             }
@@ -53,7 +58,7 @@ const requestManager = () => {
 
     const profileDetail = async (id) => {
         try {
-            const response = await api.get("person/" + id + "?api_key=" + tmdbApiKey + "&language=" + language)
+            const response = await api.get("person/" + id, { params: { language } })
             return {
                 data: response.data
             }
@@ -64,7 +69,7 @@ const requestManager = () => {
 
     const movieTeam = async (id) => {
         try {
-            const response = await api.get("movie/" + id + "/credits" + "?api_key=" + tmdbApiKey + "&language=" + language)
+            const response = await api.get("movie/" + id + "/credits")
             return {
                 data: response.data
             }
@@ -74,7 +79,7 @@ const requestManager = () => {
     }
     const getProfileImage = async (id) => {
         try {
-            const response = await api.get("person/" + id + "/images" + "?api_key=" + tmdbApiKey)
+            const response = await api.get("person/" + id + "/images")
             return {
                 data: response.data
             }
@@ -84,7 +89,7 @@ const requestManager = () => {
     }
     const search = async (title) => {
         try {
-            const response = await api.get("search/company?api_key=" + tmdbApiKey + "&language=" + language + "&query=" + title)
+            const response = await api.get("search/company", { params: { language, query: title } })
             return {
                 data: response.data
             }

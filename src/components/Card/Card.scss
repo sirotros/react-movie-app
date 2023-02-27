@@ -29,10 +29,16 @@
     width: 90%;
   }
 }
+@media screen and (max-width: 1400px) {
+  .card {
+    margin: 20px auto;
+  }
+}
 @media screen and (max-width: 480px) {
   .card {
     max-width: 320px;
     height: 550px;
+    margin: 0 auto;
     .imgContainer {
       width: 280px;
     }

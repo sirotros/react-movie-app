@@ -2,3 +2,7 @@
 
 @import "variables.scss";
 @import "bootstrap";
+
+.form-control:focus {
+  box-shadow: none !important;
+}

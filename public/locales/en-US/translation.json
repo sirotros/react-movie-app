@@ -14,5 +14,11 @@
   "Biography": "Biography",
   "BiographyErrorMessage": "English biography Not Found",
   "MovieNotFound": "movie not found",
-  "ErrorMessage": "Page Not Found"
+  "ErrorMessage": "Page Not Found",
+  "Overview": "Overview Not Found",
+  "ApiKeyErrorMessage": "You did not enter a valid api key, please check and try again",
+  "ApiPlaceholder": "Enter The Api Key",
+  "ApiPageMessage": "If you want continue, please enter API key from themoviedb.org",
+  "LogOut" : "Log Out",
+  "LoginPage":"Login Page"
 }

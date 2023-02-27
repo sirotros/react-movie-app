@@ -1,11 +1,11 @@
 import "scss/page/Home.scss"
 import requestManager from "api";
-import Card from "components/Card/Card";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ReactPaginate from "react-paginate";
 import Spinner from "components/Spinner/Spinner";
 import { changeTitle } from "utils";
+import MovieCard from "components/MovieCard/MovieCard";
 
 
 export default function Home() {
@@ -14,6 +14,7 @@ export default function Home() {
   const { t, i18n } = useTranslation();
   const request = requestManager();
   const [pages, setPages] = useState(1);
+
   useEffect(() => {
     request.nowPlaying(pages).then((response) => {
       setNowPlayings(response.data);
@@ -25,16 +26,16 @@ export default function Home() {
   const handleChange = (e) => {
     setPages(e.selected + 1)
   }
-
+  
   return (
     <section>
       <h3 className="text-center mt-4">{t("NowPlaying")}</h3>
       <div className="d-flex flex-wrap ">
         {!isLoading ? (
           <>
-            {nowPlayings.results.map((nowPlaying) => {
+            {nowPlayings?.results.map((nowPlaying) => {
               return (
-                <Card
+                <MovieCard
                   id={nowPlaying.id}
                   title={nowPlaying?.title}
                   overview={nowPlaying?.overview}

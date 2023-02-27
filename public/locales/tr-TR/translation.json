@@ -14,5 +14,11 @@
   "Biography": "Biyografi",
   "BiographyErrorMessage": "Türkçe biyografi Bulunamadı",
   "MovieNotFound": "adlı film bulunamadı",
-  "ErrorMessage": "Sayfa Bulunamadı"
+  "ErrorMessage": "Sayfa Bulunamadı",
+  "Overview": "Genel Bakış Bulunamadı",
+  "ApiKeyErrorMessage": "Geçerli bir api  anahtarı girmediniz, lütfen kontrol edip tekrar deneyiniz",
+  "ApiPlaceholder": "Api Anahtarını Girin",
+  "ApiPageMessage": "Devam etmek için lütfen themoviedb.org adresinden aldığınız API anahtarınızı giriniz",
+  "LogOut": "Çıkış Yap",
+  "LoginPage":"Giriş Sayfası"
 }

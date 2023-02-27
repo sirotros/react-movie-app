@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import requestManager from "api";
 import { useEffect, useState } from "react";
 import { movieImgURL } from "utils/config";
-import Card from "components/Card/Card";
 import { useTranslation } from "react-i18next";
 import Spinner from "components/Spinner/Spinner";
 import { changeTitle } from "utils";
+import ProfileCard from "components/ProfileCard/ProfileCard";
 
 export default function Detail() {
   const [isLoading, setIsLoading] = useState(true)
@@ -23,10 +23,12 @@ export default function Detail() {
       setIsLoading(false)
     });
     request.movieTeam(id).then((response) => setTeam(response.data.cast));
-  }, [id, i18n.language]);
+  }, [id, i18n]);
+
   useEffect(() => {
     changeTitle(detail?.title)
   }, [detail])
+  
   return (
     <section className="mt-5">
       {!isLoading ?
@@ -62,7 +64,7 @@ export default function Detail() {
                   <div className="d-flex flex-wrap">
                     {teams.map((team) => {
                       return (
-                        <Card
+                        <ProfileCard
                           key={team.id}
                           title={team.name}
                           imgUrl={team.profile_path}
