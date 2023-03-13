@@ -1,4 +1,4 @@
-# Audiophile E-Commerce Website 
+# React Movie App
 
 Website using movieDb api where you can see the movies on screen, the most rated movies and the details of popular movies.  You can use it in Turkish and English with multiple language options.
 
